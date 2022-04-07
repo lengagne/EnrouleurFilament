@@ -13,13 +13,15 @@ module MotorGear()
         {
             union()
             {               
-                gear(15,10,ScaleGear);
-                translate([0,0,-5])    cylinder(r=DBobineIn/2-5, h=5,$fn=50);
+                gear(20,10,ScaleGear);
+//                translate([0,0,HBearing1])    cylinder(r=DBobineIn/2.-5, h=HBearing1,$fn=50);
+//                translate([0,0,-HBearing1+5])    cylinder(r=MotorAxis2, h=HBearing1,$fn=50);
             }
-            translate([0,0,-5]) cylinder(r=DBearingOut/2+eps, h=5,$fn=50);
-            cube([MotorAxis1, MotorAxis2,30],center=true);
+//            translate([0,0,HBearing1])  cylinder(r=DBearing1Out/2+eps-0.25, h=HBearing1,$fn=50);
+            cube([MotorAxis1, MotorAxis2,100],center=true);
         }        
     }
 }
 
-MotorGear();
+if (all == 0)
+    MotorGear();
